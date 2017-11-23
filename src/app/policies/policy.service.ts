@@ -4,7 +4,7 @@ import { IPolicy } from './policy';
 @Injectable()
 export class PolicyService{
 
-    getPolocies(): IPolicy[] {
+    getPolicies(): IPolicy[] {
         return;
     }
 }

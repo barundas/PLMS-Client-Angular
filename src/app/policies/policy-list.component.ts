@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IPolicy } from './policy';
+import { PolicyService } from './policy.service';
 
 @Component({
     selector: 'plms-policies',
