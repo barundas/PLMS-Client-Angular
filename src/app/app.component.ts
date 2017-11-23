@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { PolicyService } from './policies/policy.service';
 
 @Component({
   selector: 'plms-root',
@@ -8,7 +9,8 @@ import { Component } from '@angular/core';
     <div>
       <plms-policies></plms-policies>
     </div>
-  </div>`
+  </div>`,
+  providers: [ PolicyService ]
 })
 export class AppComponent {
   pageTitle = 'Policy Management System';

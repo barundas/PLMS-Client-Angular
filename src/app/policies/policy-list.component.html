@@ -7,23 +7,24 @@
 
 <div class='table-responsive'>
     <table class='table'
-            *ngIf='products && products.length'>
+            *ngIf='policies && policies.length'>
         <thead>
             <tr>
-                <th>
-                    <button class='btn btn-primary'
-                        (click)='toggleImage()'>
-                        {{showImage ? 'Hide' : 'Show'}} Image
-                    </button>
-                </th>
-                <th>Product</th>
+                <th>Policy</th>
                 <th>Code</th>
-                <th>Available</th>
-                <th>Price</th>
-                <th>5 Star Rating</th>
+                <th>Description</th>
+                <th>Eligible minimum age</th>
+                <th>Eligible maximum age</th>
             </tr>
         </thead>
         <tbody>
+                <tr *ngFor='let policy of policies'>
+                    <td>{{ policy.policyName }}</td>
+                    <td>{{ policy.policyCode }}</td>
+                    <td>{{ policy.policyDescription }}</td>
+                    <td>{{ policy.eligibleMinAge }}</td>
+                    <td>{{ policy.eligibleMaxAge }}</td>
+                </tr>
         </tbody>
     </table>
 </div>
