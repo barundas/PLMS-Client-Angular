@@ -5,9 +5,17 @@ import { PolicyService } from './policies/policy.service';
   selector: 'plms-root',
   template: `
   <div>
-    <h1>{{pageTitle}}</h1>
-    <div>
-      <plms-policies></plms-policies>
+    <nav class='navbar navbar-default'>
+      <div class='container-fluid'>
+        <a class='navbar-brand'>{{pageTitle}}</a>
+        <ul class='nav navbar-nav'>
+          <li><a [routerLink]="['/welcome']">Home</a></li>
+          <li><a [routerLink]="['/policies']">Policy List</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class='container'>
+      <router-outlet></router-outlet>
     </div>
   </div>
   `

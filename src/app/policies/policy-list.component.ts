@@ -4,7 +4,6 @@ import { PolicyService } from './policy.service';
 import { NGXLogger } from 'ngx-logger';
 
 @Component({
-    selector: 'plms-policies',
     templateUrl: './policy-list.component.html',
     providers: [NGXLogger, PolicyService]
 })
