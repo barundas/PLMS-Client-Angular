@@ -9,8 +9,8 @@ import { PolicyService } from './policies/policy.service';
     <div>
       <plms-policies></plms-policies>
     </div>
-  </div>`,
-  providers: [ PolicyService ]
+  </div>
+  `
 })
 export class AppComponent {
   pageTitle = 'Policy Management System';

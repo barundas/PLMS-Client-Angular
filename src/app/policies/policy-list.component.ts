@@ -1,39 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { IPolicy } from './policy';
 import { PolicyService } from './policy.service';
+import { NGXLogger } from 'ngx-logger';
 
 @Component({
     selector: 'plms-policies',
-    templateUrl: './policy-list.component.html'
+    templateUrl: './policy-list.component.html',
+    providers: [NGXLogger, PolicyService]
 })
 export class PolicyListComponent implements OnInit {
     pageTitle: string = 'Policy List';
-    policies: IPolicy[] = [
-        {
-            "policyKey": 1,
-            "policyName": "Jeevan Sudha",
-            "policyCode": "LIC-001",
-            "policyDescription": "fbbubu  b eiubfufufbebfubfue",
-            "eligibleMinAge": 6,
-            "eligibleMaxAge": 70,
-            "policyInceptionDate": "22/12/1977"
-        },
-        {
-            "policyKey": 2,
-            "policyName": "Jeevan Sudha II",
-            "policyCode": "LIC-002",
-            "policyDescription": "fbbubu  b eiubfufufbebfubfueijfoijfjfo",
-            "eligibleMinAge": 6,
-            "eligibleMaxAge": 70,
-            "policyInceptionDate": "22/12/1977"
-        }
-    ];
+    policies: IPolicy[] = [];
+    errorMessage: string;
 
-    constructor(private _policyService: PolicyService) {
+    constructor(private _policyService: PolicyService, private logger: NGXLogger) {
 
     }
 
     ngOnInit(): void {
-        this.policies = this._policyService.getPolicies();
+        this.logger.info("bfdndshs jdskds f");
+        this._policyService.getPolicies()
+        .subscribe(policies => this.policies = policies, error => this.errorMessage = <any>error);
+        this.logger.info("bfdndshs jdskds f" + this.policies.length);
     }
+
 }
