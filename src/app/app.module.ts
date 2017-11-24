@@ -8,6 +8,7 @@ import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 import { PolicyDetailComponent } from './policies/policy-detail.component';
 import { WelcomeComponent } from './home/welcome.component';
 import { RouterModule} from '@angular/router';
+import { LoginComponent } from './login/login/login.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { RouterModule} from '@angular/router';
     AppComponent,
     PolicyListComponent,
     PolicyDetailComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
